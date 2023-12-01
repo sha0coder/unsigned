@@ -4,6 +4,7 @@
 # Documentation
 
 ```
+from unsigned import Unsigned32
 a = Unsigned32(-1)
 b = Unsigned32(0xffffffff)
 
@@ -25,6 +26,7 @@ assert a.hex() == '0x1fffffff'
 ```
 
 ```
+from unsigned import Signed16
 a = Signed16(-1)
 b = Signed16(0xffff)
 
