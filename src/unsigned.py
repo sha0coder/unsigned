@@ -4,6 +4,9 @@ class Unsigned64:
     def __init__(self, val=0):
         self.val = self.__fix(val)
 
+    def __call__(self):
+        return self.val
+
     def __fix(self, val):
         if val < 0:
             val += 2**64
@@ -59,6 +62,9 @@ class Unsigned32:
 
     def __init__(self, val=0):
         self.val = self.__fix(val)
+
+    def __call__(self):
+        return self.val
 
     def __fix(self, val):
         if val < 0:
