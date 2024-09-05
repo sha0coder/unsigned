@@ -23,6 +23,7 @@ a.shl(2)
 a.shr(3)
 
 assert a.hex() == '0x1fffffff'
+assert a() == 0x1fffffff
 ```
 
 ```
