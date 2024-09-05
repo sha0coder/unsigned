@@ -56,6 +56,17 @@ class Unsigned64:
     def __str__(self):
         return str(self.val)
 
+    def bytes_le(self):
+        return self.val.to_bytes(8, byteorder='little', signed=False)
+
+    def bytes_be(self):
+        return self.val.to_bytes(8, byteorder='big', signed=False)
+
+    def from_bytes_le(self, blob):
+        self.val = int.from_bytes(blob[:8], byteorder='little', signed=False)
+
+    def from_bytes_be(self, blob):
+        self.val = int.from_bytes(blob[:8], byteorder='big', signed=False)
 
 
 class Unsigned32:
@@ -115,6 +126,18 @@ class Unsigned32:
     def __str__(self):
         return str(self.val)
 
+    def bytes_le(self):
+        return self.val.to_bytes(4, byteorder='little', signed=False)
+
+    def bytes_be(self):
+        return self.val.to_bytes(4, byteorder='big', signed=False)
+
+    def from_bytes_le(self, blob):
+        self.val = int.from_bytes(blob[:4], byteorder='little', signed=False)
+
+    def from_bytes_be(self, blob):
+        self.val = int.from_bytes(blob[:4], byteorder='big', signed=False)
+
 
 class Unsigned16:
 
@@ -169,6 +192,18 @@ class Unsigned16:
 
     def __str__(self):
         return str(self.val)
+
+    def bytes_le(self):
+        return self.val.to_bytes(2, byteorder='little', signed=False)
+
+    def bytes_be(self):
+        return self.val.to_bytes(2, byteorder='big', signed=False)
+
+    def from_bytes_le(self, blob):
+        self.val = int.from_bytes(blob[:2], byteorder='little', signed=False)
+
+    def from_bytes_be(self, blob):
+        self.val = int.from_bytes(blob[:2], byteorder='big', signed=False)
 
 
 class Unsigned8:
